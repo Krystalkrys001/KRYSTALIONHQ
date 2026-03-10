@@ -1,0 +1,148 @@
+/* ============================================================
+   KRYSTALION HQ — HOTEL SERVICES
+   ============================================================ */
+
+.services-section {
+  background: var(--dark);
+  padding-bottom: 100px;
+}
+
+.services-accordion {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.accord-item {
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.accord-item.open {
+  border-color: rgba(201,168,76,0.4);
+}
+
+.accord-header {
+  width: 100%;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  background: var(--dark-2);
+  transition: background 0.3s ease;
+  text-align: left;
+}
+
+.accord-header:hover {
+  background: var(--dark-3);
+}
+
+.accord-icon {
+  font-size: 20px;
+  color: var(--gold);
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+
+.accord-header div {
+  flex: 1;
+}
+
+.accord-header strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.accord-header small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.accord-arrow {
+  color: var(--gold);
+  font-size: 18px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.accord-item.open .accord-arrow {
+  transform: rotate(180deg);
+}
+
+.accord-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accord-item.open .accord-body {
+  max-height: 400px;
+}
+
+.accord-content {
+  padding: 28px;
+  background: var(--dark-3);
+  border-top: 1px solid var(--border);
+}
+
+.accord-content p {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.service-prices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.service-price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.04);
+  font-size: 13px;
+}
+
+.service-price-item span { color: var(--muted); }
+.service-price-item strong { color: var(--gold); }
+
+.btn-service-book {
+  display: inline-block;
+  padding: 11px 28px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.btn-service-book:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+@media (max-width: 768px) {
+  .services-accordion { padding: 0 20px; }
+  .service-prices { grid-template-columns: 1fr; }
+}

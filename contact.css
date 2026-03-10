@@ -1,0 +1,110 @@
+/* ============================================================
+   KRYSTALION HQ — CONTACT
+   ============================================================ */
+
+.contact-section {
+  background: var(--dark);
+  padding-bottom: 100px;
+}
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.contact-card {
+  background: var(--dark-2);
+  border: 1px solid var(--border);
+  padding: 48px 36px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.contact-card:hover {
+  border-color: rgba(201,168,76,0.4);
+  transform: translateY(-4px);
+}
+
+.contact-icon {
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--gold);
+  transition: var(--transition);
+}
+
+.contact-card:hover .contact-icon {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.08);
+}
+
+.contact-card h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.contact-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.contact-card small {
+  display: block;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.contact-btn {
+  display: inline-block;
+  padding: 11px 24px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  word-break: break-all;
+}
+
+.contact-btn:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.concierge-note {
+  text-align: center;
+  margin-top: 48px;
+  padding: 20px;
+}
+
+.concierge-note p {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-cards { padding: 0 20px; }
+}

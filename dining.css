@@ -1,0 +1,108 @@
+/* ============================================================
+   KRYSTALION HQ — DINING SECTION
+   ============================================================ */
+
+.dining-section {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.dining-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.dining-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.88);
+}
+
+.dining-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.dining-categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-bottom: 60px;
+}
+
+.dining-cat {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  padding: 40px 28px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.dining-cat:hover {
+  background: rgba(201,168,76,0.06);
+  border-color: rgba(201,168,76,0.4);
+}
+
+.dining-cat-icon {
+  font-size: 32px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.dining-cat h3 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.dining-range {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.dining-cat p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.btn-view-menu {
+  display: block;
+  margin: 0 auto;
+  padding: 18px 60px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-view-menu:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .dining-categories { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .dining-categories { grid-template-columns: 1fr; }
+  .dining-inner { padding: 0 20px; }
+}

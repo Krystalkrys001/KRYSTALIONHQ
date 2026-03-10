@@ -1,0 +1,195 @@
+/* ============================================================
+   KRYSTALION HQ — LUXURY SUITES
+   ============================================================ */
+
+.suites-section {
+  background: var(--black);
+  padding-bottom: 100px;
+}
+
+.suites-section .section-title,
+.suites-section .section-desc {
+  color: var(--white);
+}
+
+.suites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.suite-card {
+  background: var(--dark-2);
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  border: 1px solid transparent;
+}
+
+.suite-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+/* Suite Gallery */
+.suite-gallery {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.suite-slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.suite-slides img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.slide-prev,
+.slide-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: var(--gold);
+  border: 1px solid var(--border);
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  opacity: 0;
+  z-index: 5;
+}
+
+.suite-gallery:hover .slide-prev,
+.suite-gallery:hover .slide-next {
+  opacity: 1;
+}
+
+.slide-prev { left: 10px; }
+.slide-next { right: 10px; }
+
+.slide-prev:hover,
+.slide-next:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.slide-counter {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  z-index: 5;
+}
+
+/* Suite Body */
+.suite-body {
+  padding: 32px;
+}
+
+.suite-price {
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.suite-price span {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.suite-name {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.suite-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.suite-features {
+  list-style: none;
+  margin-bottom: 28px;
+}
+
+.suite-features li {
+  font-size: 13px;
+  color: rgba(253,251,247,0.7);
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.suite-features li::before {
+  content: '◆';
+  color: var(--gold);
+  font-size: 7px;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.btn-suite {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  text-align: center;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  transition: var(--transition);
+}
+
+.btn-suite:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+@media (max-width: 1100px) {
+  .suites-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 600px) {
+  .suites-grid { padding: 0 20px; }
+  .suite-body { padding: 24px; }
+}

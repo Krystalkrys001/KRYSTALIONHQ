@@ -1,0 +1,255 @@
+/* ============================================================
+   KRYSTALION HQ — PRESIDENTIAL SUITE
+   The Pinnacle — Stands completely apart from everything else
+   ============================================================ */
+
+.presidential-section {
+  position: relative;
+  min-height: 100vh;
+  background: var(--black);
+  overflow: hidden;
+}
+
+.presidential-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1596386461350-326ccb383e9f?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.08;
+}
+
+.presidential-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10,10,10,0.98) 40%, rgba(10,10,10,0.6) 100%);
+  z-index: 1;
+}
+
+.presidential-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Presidential Gallery */
+.presidential-gallery {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.presidential-gallery::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 1px solid var(--gold);
+  opacity: 0.3;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.pres-slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pres-slides img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.pres-prev,
+.pres-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10,10,10,0.7);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 5;
+}
+
+.pres-prev:hover,
+.pres-next:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.pres-prev { left: 16px; }
+.pres-next { right: 16px; }
+
+.pres-counter {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(10,10,10,0.8);
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  z-index: 5;
+}
+
+/* Presidential Content */
+.presidential-content {
+  padding-left: 20px;
+}
+
+.pres-crown {
+  font-size: 40px;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: block;
+  animation: crownGlow 3s ease infinite;
+}
+
+@keyframes crownGlow {
+  0%, 100% { text-shadow: 0 0 20px rgba(201,168,76,0.4); }
+  50% { text-shadow: 0 0 40px rgba(201,168,76,0.8); }
+}
+
+.pres-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.pres-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.pres-price {
+  font-family: var(--font-display);
+  font-size: 40px;
+  color: var(--gold);
+  margin-bottom: 12px;
+  text-shadow: 0 0 30px rgba(201,168,76,0.3);
+}
+
+.pres-price span {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.pres-tagline {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-style: italic;
+  color: var(--ivory);
+  margin-bottom: 20px;
+}
+
+.pres-desc {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: rgba(253,251,247,0.6);
+  line-height: 1.9;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pres-amenities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.pres-amenity {
+  font-size: 12px;
+  color: rgba(253,251,247,0.6);
+  padding: 8px 12px;
+  border-left: 2px solid var(--gold);
+  background: rgba(201,168,76,0.04);
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+
+.pres-amenity:hover {
+  color: var(--white);
+  background: rgba(201,168,76,0.08);
+}
+
+.btn-presidential {
+  display: inline-block;
+  padding: 18px 52px;
+  background: var(--gold);
+  color: var(--black);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-presidential::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-presidential:hover::before {
+  left: 100%;
+}
+
+.btn-presidential:hover {
+  background: transparent;
+  color: var(--gold);
+  box-shadow: 0 0 30px rgba(201,168,76,0.3);
+}
+
+@media (max-width: 1024px) {
+  .presidential-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 80px 40px;
+  }
+  .presidential-content { padding-left: 0; }
+}
+
+@media (max-width: 600px) {
+  .presidential-inner { padding: 60px 20px; }
+  .pres-amenities { grid-template-columns: 1fr; }
+}
